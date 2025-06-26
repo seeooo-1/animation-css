@@ -91,14 +91,14 @@ header nav .gnb li a {color: #fff4d6;padding: 25px;display: block;}
 
 #visual .text {width: 550px;height: 200px;
     position: absolute;left: 50%;transform: translate(-50%, 100%);
-    font-family: 'Playfair Display' ;font-size: 78px;color:#FFEE8B;}
+    font-family: 'Playfair Display' ;font-size: 78px;color:#FFEE8B;z-index: 1;}
 #visual .text ul {text-align: center;letter-spacing: -7px;}
 #visual .text ul li {font-weight: 900;}
 #visual .text ul li span {position: relative;opacity: 1;animation: seo 4s}
 
 p {position: relative;}
-.para1 {animation: slideFromRight 1s ease-out;}
-.para2 {animation: slideFromLeft 1s ease-out;}
+.para1 {animation: slideFromRight 2s ease-out;}
+.para2 {animation: slideFromLeft 2s ease-out;}
 @keyframes slideFromRight {
   0% { left: 100px; opacity: 0; }
   100% { left: 0; opacity: 1; }
@@ -146,6 +146,6 @@ background: url(../image/bubble.png);animation: bubble 30s linear infinite;}
 
 .bubble2 {width: 100%;height: 100%;position: absolute;
     background: url(../image/bubble.png);animation: bubble2 50s linear infinite;
-    background-size: 80%;opacity: 0.8;}
+    background-size: 50%;opacity: 0.8;}
 @keyframes bubble2 {0% {background-position: 500px 300px;}
-100% {background-position: 600px, 800px;}}
+60% {background-position: 600px, 800px;}}
