@@ -7,46 +7,7 @@
     <link rel="stylesheet" href="css/1.css">
 </head>
 <body>
-    <script>
-        // 5초 뒤 자동재생 시도
-setTimeout(function() {
-    audio.play().then(function() {
-        playBtn.style.display = 'none';
-        pauseBtn.style.display = 'inline';
-        pauseBtn.classList.add('pulse'); // 애니메이션 효과 추가
-
-        setTimeout(function() {
-            audio.muted = false;
-        }, 1000);
-    }).catch(function(err) {
-        console.log("자동재생 실패:", err);
-    });
-}, 5000);
-
-// 재생 버튼
-playBtn.addEventListener('click', function() {
-    audio.play();
-    audio.muted = false;
-    playBtn.style.display = 'none';
-    pauseBtn.style.display = 'inline';
-    pauseBtn.classList.add('pulse'); // 재생 시 애니메이션 추가
-});
-
-// 일시정지 버튼
-pauseBtn.addEventListener('click', function() {
-    audio.pause();
-    pauseBtn.style.display = 'none';
-    playBtn.style.display = 'inline';
-    pauseBtn.classList.remove('pulse'); // 정지 시 애니메이션 제거
-});
-
-// 음악이 끝나면 버튼 초기화
-audio.addEventListener('ended', function() {
-    pauseBtn.style.display = 'none';
-    playBtn.style.display = 'inline';
-    pauseBtn.classList.remove('pulse'); // 음악 끝나면 애니메이션 제거
-});
-    </script>
+    
     <header>
         <h1><img src="image/logo.png"></h1>
         <nav>
@@ -62,7 +23,7 @@ audio.addEventListener('ended', function() {
     <div id="visual">
         <div class="bubble"></div>
         <div class="playbtn">
-            <audio id=audio src="music/Stay.mp4" controls></audio>
+            <audio id="audio" src="music/Stay.mp4" controls></audio>
             <img id="playbtn" src="image/btn_play.png" alt="플레이">
             <img id="pauseBtn" src="image/btn_pause.png" alt="일시정지">
         </div>
@@ -94,5 +55,45 @@ audio.addEventListener('ended', function() {
             </ul>
         </div>
     </div>
+    <script>
+        // 5초 뒤 자동재생 시도
+setTimeout(function() {
+    audio.play().then(function() {
+        playbtn.style.display = 'none';
+        pauseBtn.style.display = 'inline';
+        pauseBtn.classList.add('pulse'); // 애니메이션 효과 추가
+
+        setTimeout(function() {
+            audio.muted = false;
+        }, 1000);
+    }).catch(function(err) {
+        console.log("자동재생 실패:", err);
+    });
+}, 5000);
+
+// 재생 버튼
+playbtn.addEventListener('click', function() {
+    audio.play();
+    audio.muted = false;
+    playbtn.style.display = 'none';
+    pauseBtn.style.display = 'inline';
+    pauseBtn.classList.add('pulse'); // 재생 시 애니메이션 추가
+});
+
+// 일시정지 버튼
+pauseBtn.addEventListener('click', function() {
+    audio.pause();
+    pauseBtn.style.display = 'none';
+    playbtn.style.display = 'inline';
+    pauseBtn.classList.remove('pulse'); // 정지 시 애니메이션 제거
+});
+
+// 음악이 끝나면 버튼 초기화
+audio.addEventListener('ended', function() {
+    pauseBtn.style.display = 'none';
+    playbtn.style.display = 'inline';
+    pauseBtn.classList.remove('pulse'); // 음악 끝나면 애니메이션 제거
+});
+    </script>
 </body>
 </html>
